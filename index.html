@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Viewport meta tag ensures proper rendering and scaling on various devices -->
+
+<style>
+/* CSS Styles */
+/* Resets margin for the entire page */ 
+body {
+  margin:0; /* Resets margin */
+  background-color: #608D40; /* Background color of the website */
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Ensures overflow behaviour*/ 
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navigation bar at the top*/ 
+  top: 0; /* Positions the navbar at the top*/
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links */
+.navbar a {
+  float: left; /* Aligns links horizontally*/
+  display: block; /* Display links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers text within links */
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /* Removes underline */ 
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for logo */
+.logo {
+  position: fixed; /* Positions the logo */
+  top: 1px; /* Aligns the logo vertically */
+  left: 46.2px; /* Aligns the logo horizontally */
+}
+
+/* Styling for logo image */
+.logo img {
+  width: 141.5px; /* Width of the logo */
+}
+
+/* Styling for "About Us" link */
+.about-us {
+  position: fixed; /* Positions the "About Us" link */
+  top: 63.3px; /* Aligns the "About Us" link vertically */
+  left: 280.5px; /* Aligns the "About Us" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */ 
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "About Us" link */
+.about-us:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Articles" link */
+.articles {
+  position: fixed; /* Positions the "Articles" link */
+  top: 63.3px; /* Aligns the "Articles" link vertically */
+  left: 629.3px; /* Aligns the "Articles" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Articles" link */
+.articles:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Shop" link */
+.shop {
+  position: fixed; /* Positions the "Shop" link */
+  top: 63.3px; /* Aligns the "Shop" link vertically */
+  left: 956.2px; /* Aligns the "Shop" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Shop" link */
+.shop:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for cart icon */
+.cart {
+  position: fixed; /* Positions the icon */
+  top: 60px; /* Position of the cart icon */
+  left: 1200px; /* Aligns the icon horizontally */
+}
+
+/* Styling for cart icon image */
+.cart img {
+  width: 50.2px; /* Width of the cart icon */
+  height: 48.7px; /* Height of the cart icon */
+}
+
+/* Hover effect for cart icon */
+.cart img:hover {
+  filter: invert(100%); /* Invert colors of the cart icon on hover */
+}
+
+/* Main content area */
+.main {
+  padding: 16px; /* Padding around the content */
+  margin-top: 230px; /* Adjusted margin top to accommodate the fixed navbar */
+  height: 3000px; /* Used in this example to enable scrolling */
+}
+
+/* Header Animation */
+@keyframes fadeHeader {
+  0% {
+    opacity: 0; /* Initial opacity */ 
+    transform: translateY(-50%); /* Moves header up */
+  }
+  100% {
+    opacity: 1; /* Full opacity */
+    transform: translateY(0%); /* Resets header position */
+  }
+}
+
+/* Styling for header text */
+.header {
+  position: absolute; /* Position the header */
+  top: 222.9px; /* Y alignment */
+  left: 25%; /* Adjust the left position to center */
+  transform: translateX(-50%); /* Centers the header */
+  font-family: 'Raleway', sans-serif; /* Font Style */
+  font-size: 20px; /* Font size */
+  color: #ffffff; /* Font color */
+  font-weight: bold; /* Font effect: Bold */
+  animation: fadeHeader 2s ease forwards; /* Font animation: Fading */
+  text-align: center; /* Center alignment */
+}
+
+/* Styling for additional text */
+.additional-text {
+  position: absolute; /* Position the text */
+  top: 285px; /* Y alignment */
+  left: 17%; /* X alignment */
+  transform: translateX(-50%); /* Centers the header */
+  font-family: 'Raleway', sans-serif; /* Font Style */
+  font-size: 20px; /* Font size */
+  color: #ffffff; /* Font color */
+  animation: fadeHeader 4s ease forwards; /* Font animation: Fading */
+  text-align: center; /* Center alignment */
+}
+
+/* See More Button */
+.see-more-button {
+  position: absolute; /* Position the button */
+  top: 370px; /* Y alignment */
+  left: 590px; /* X alignment */
+  width: 213.5px; /* Button width */
+  height: 50px; /* Button height */
+  background-color: #c8ffb0; /* Button color */
+  border: none; /* Removes button border */
+  border-radius: 25px; /* Rounded edges */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  text-align: center; /* Center alignment */
+  line-height: 50px; /* Vertical center alignment of text */
+  text-decoration: none; /* Removes underline */
+  cursor: pointer; /* Cursor style */
+}
+
+/* Try Our Best Seller Header */
+.try-our-best-seller {
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color */
+  font-weight: bold; /* Font weight */
+  position: absolute; /* Position the header */
+  top: 900px; /* Y alignment */
+  left: 570px; /* X alignment */
+}
+
+/* Shop Now Button */
+.shop-now-button {
+  position: absolute; /* Position the button */
+  top: 950px; /* Y alignment */
+  left: 590px; /* X alignment */
+  width: 230.4px; /* Button width */
+  height: 50px; /* Button height */
+  background-color: #c8ffb0; /* Button color */
+  border: none; /* Removes button border */
+  border-radius: 25px; /* Rounded edges */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  text-align: center; /* Center alignment */
+  line-height: 50px; /* Vertical center alignment of text */
+  text-decoration: none; /* Removes underline */
+  cursor: pointer; /* Cursor style */
+}
+
+/* Styling for fixed top navigation bar */
+.fixed-navbar {
+  overflow: hidden; /* Ensures overflow behaviour */  
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top */ 
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links in the fixed navbar */
+.fixed-navbar a {
+  float: left; /* Aligns links horizontally */
+  display: block; /* Displays links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers the text within links */ 
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /*Removes underline */
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links in the fixed navbar */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for slideshow container */
+.slideshow-container {
+  position: absolute; /* Positions the slideshow container */
+  top: 470px; /* Y alignment */
+  left: 50%; /* X alignment */
+  transform: translateX(-50%); /* Centers the slideshow container */ 
+  width: 80%; /* Adjust width */
+}
+
+/* Styling for slides */
+.mySlides {
+  display: none; /* Initially hides all slides */
+  width: 100%; /*Ensures slides occupy full width of the container */
+}
+
+/* Styling for images within slides */
+.mySlides img {
+  width: 100%; /* Ensures the images within slides occupy full width */
+}
+
+/* Styling for slideshow circles */
+.slideshow-circle {
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  height: 15px; /* Height of the circle */
+  width: 15px; /* Width of the circle */
+  margin: 0 2px; /* Spacing between circles */
+  background-color: #A6A6A6; /* Default background color of circles */
+  border-radius: 50%; /* Makes circles rounded */
+  display: inline-block; /* Displays circles in a row */
+  transition: background-color 0.6s ease; /* Smooth transition effect */
+}
+
+/* Styling for active slideshow circle */
+.slideshow-circle.active {
+  background-color: #000000; /* Background color of active circle */
+}
+
+/* Styling for slideshow arrow buttons */
+.slideshow-arrow {
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  position: absolute; /* Positioning */
+  top: 50%; /* Vertically centered */
+  width: auto; /* Automatically adjusts width */
+  padding: 16px; /* Padding around the arrow */
+  margin-top: -22px; /* Adjusts position */
+  color: white; /* Color of the arrow */
+  font-weight: bold; /* Bold font */
+  font-size: 20px; /* Font size */
+  transition: 0.6s ease; /* Smooth transition effect */
+  border-radius: 0 3px 3px 0; /* Rounded corners for the arrow */
+}
+
+/* Hover effect for slideshow arrow buttons */
+.slideshow-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darkens background on hover */
+}
+
+/* Styling for previous arrow button */
+.prev {
+  left: 0; /* Positioned to the left */
+}
+
+/* Styling for next arrow button */
+.next {
+  right: 0; /* Positioned to the right */
+}
+
+/* Product Card Styles */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a shadow effect to the card */
+  max-width: 402.8px; /* Width of the product card */
+  height: 596.4px; /* Height of the product card */
+  margin: auto; /* Centers the card horizontally */
+  text-align: center; /* Centers the content inside the card */
+  position: absolute; /* Positions the card */
+  top: 1128.2px; /* Y alignment of the card */
+}
+
+.card button {
+  border: none; /* Removes button border */
+  outline: 0; /* Removes button outline */
+  padding: 12px; /* Padding inside the button */
+  color: white; /* Text color of the button */
+  background-color: #000000; /* Button background color */
+  text-align: center; /* Centers the text within the button */
+  cursor: pointer; /* Cursor style */
+  width: 277.4px; /* Button width */
+  height: 42.5px; /* Button height */
+  font-size: 12px; /* Button text size */
+  position: absolute; /* Position the button absolutely */
+  top: 90%; /* Adjust the top position as needed, e.g., 90% */
+  left: 50%; /* Center the button horizontally */
+  transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.card button:hover {
+  opacity: 0.7; /* Opacity change on button hover */
+}
+
+/* Health & Lifestyles Header */
+.health-lifestyles {
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color */
+  font-weight: bold; /* Font weight */
+  position: absolute; /* Position the header */
+  top: 1700px; /* Y alignment */
+  left: 570px; /* X alignment */
+}
+
+/* See All Articles Button */
+.see-all-articles-button {
+  position: absolute; /* Position the button */
+  top: 1750px; /* Y alignment */
+  left: 590px; /* X alignment */
+  width: 230.4px; /* Button width */
+  height: 50px; /* Button height */
+  background-color: #c8ffb0; /* Button background color */
+  border: none; /* Removes button border */
+  border-radius: 25px; /* Rounded edges */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000;  /* Font color */
+  text-align: center; /* Center alignment */
+  line-height: 50px; /* Vertical center alignment of text */
+  text-decoration: none; /* Removes underline */
+  cursor: pointer;  /* Cursor style */
+}
+
+/* Styling for the orange fruit animation */
+.orange-animation {
+  position: absolute; /* Position the orange fruit animation*/
+  top: 1733.7px; /* Y alignment */
+  left: 46.2px; /* X alignment */
+  width: 153.2px; /* Width of the orange fruit animation */
+  height: 153.2px; /* Height of the orange fruit animation */
+  border-radius: 50%; /* Makes the orange fruit a circle */
+  background-color: #F9A020; /* Color of the orange fruit */
+  opacity: 0; /* Initially hidden */
+  animation: fillJuice 2s ease forwards, fadeJuice 2s ease forwards; /* Animation for filling and fading */
+}
+
+/* Animation keyframes for filling the orange fruit animation */
+@keyframes fillJuice {
+  0% {
+    transform: scaleY(0); /* Initial scale along the Y-axis */
+  }
+  100% {
+    transform: scaleY(1); /* Full scale along the Y-axis */
+  }
+}
+
+/* Animation keyframes for fading the juice */
+@keyframes fadeJuice {
+  0% {
+    opacity: 0; /* Initial opacity */
+  }
+  100% {
+    opacity: 1; /* Full opacity */
+  }
+}
+
+/* Styling for the tomato fruit animation */
+.tomato-animation {
+  position: absolute; /* Position the tomato fruit animation*/
+  top: 1733.7px; /* Y alignment */
+  left: 1165px; /* X alignment */
+  width: 153.2px; /* Width of the tomato fruit animation */
+  height: 153.2px; /* Height of the tomato fruit animation */
+  border-radius: 50%; /* Makes the tomato fruit a circle */
+  background-color: #D94537; /* Color of the tomato fruit */
+  opacity: 0; /* Initially hidden */
+  animation: fillJuice 2s ease forwards, fadeJuice 2s ease forwards; /* Animation for filling and fading */
+}
+
+/* Animation keyframes for filling the tomato fruit animation */
+@keyframes fillJuice {
+  0% {
+    transform: scaleY(0); /* Initial scale along the Y-axis */
+  }
+  100% {
+    transform: scaleY(1); /* Full scale along the Y-axis */
+  }
+}
+
+/* Animation keyframes for fading the juice */
+@keyframes fadeJuice {
+  0% {
+    opacity: 0; /* Initial opacity */
+  }
+  100% {
+    opacity: 1; /* Full opacity */
+  }
+}
+
+/* Article Card */
+.article-card {
+ position: absolute;
+}
+
+/* See More Button */ 
+.see-morebutton {
+ position: absolute; /* Position the button */
+ width: 230.4px; /* Button width */
+ height: 50px; /* Button height */
+ background-color: #c8ffb0; /* Button color */
+ border: none; /* Removes button border */
+ border-radius: 25px; /* Rounded edges */
+ font-family: 'Raleway', sans-serif; /* Font style */
+ font-size: 20px; /* Font size */
+ color: #000000; /* Font color */
+ text-align: center; /* Center alignment */
+ line-height: 50px; /* Vertical center alignment of text */
+ text-decoration: none; /* Removes underline */
+ cursor: pointer; /* Cursor style */
+ }
+ 
+ /* Styling for the footer */
+.footer {
+  position: absolute; /* Positions the footer */
+  top: 2600px; /* Y alignment */
+  width: 100%; /* Width of the footer */
+  height: 117.2px; /* Height of the footer */
+  background-color: #ffffff; /* Background color of the footer */
+  bottom: 0; /* Aligns the footer to the bottom of the page */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+ 
+</style>
+</head>
+<body>
+
+<!-- Header with Animation -->
+<div class="header">
+  Welcome to Kabita Juice - where every sip is a journey to vitality and wellness!
+</div>
+
+<!-- Additional Text with Animation -->
+<div class="additional-text">
+  At Kabita Juice, we believe in the power of nature to nourish and rejuvenate the body, mind, and soul. Our <br> commitment to quality, freshness, and taste ensures that each bottle of Kabita Juice is bursting with the <br> goodness of handpicked fruits and vegetables, carefully blended to perfection. 
+</div>
+
+<!-- Try Our Best Seller Header -->
+<div class="try-our-best-seller">
+  Try Our Best Seller!
+</div>
+
+<!-- See More Button -->
+<a href="aboutus.html" class="see-more-button">See More</a>
+
+<!-- Shop Now Button -->
+<a href="shop.html" class="shop-now-button">Shop Now</a>
+
+<!-- Fixed top navigation bar -->
+<div class="fixed-navbar">
+  <!-- Logo -->
+  <a href="./index" class="logo">
+    <img src="https://i.ibb.co/z4ftFft/6bca1378-c9a6-49ba-8af4-0d8a56d46be2-removebg-preview.png" alt="Logo">
+  </a>
+  <!-- Navigation Links -->
+  <a href="./aboutus" class="about-us">About Us</a>
+  <a href="articles.html" class="articles">Articles</a>
+  <a href="shop.html" class="shop">Shop</a>
+  <!-- Cart Icon -->
+  <a href="#cart" class="cart">
+    <img src="https://i.ibb.co/dMYWX0K/Screenshot-627-removebg-preview.png" alt="Cart">
+  </a>
+</div>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+  <!-- Slides -->
+  <img class="mySlides" src="https://i.ibb.co/3Wtf23V/Screenshot-593.png" alt="Slide 1">
+  <img class="mySlides" src="https://i.ibb.co/y4p0BbG/Screenshot-594.png" alt="Slide 2">
+  <img class="mySlides" src="https://i.ibb.co/QYf91bT/Screenshot-595.png" alt="Slide 3">
+
+  <!-- Slideshow circles -->
+  <div style="text-align:center">
+    <span class="slideshow-circle" onclick="currentSlide(1)"></span>
+    <span class="slideshow-circle" onclick="currentSlide(2)"></span>
+    <span class="slideshow-circle" onclick="currentSlide(3)"></span>
+  </div>
+
+  <!-- Arrow buttons -->
+  <a class="slideshow-arrow prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="slideshow-arrow next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Single Juice Product Card -->
+<div class="card" style="position: absolute; top: 1050px; left: 60px;">
+  <img src="https://i.ibb.co/6wyfHyh/Screenshot-576.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<!-- Dating Juice Product Card -->
+<div class="card" style="position: absolute; top: 1050px; left: 500px;">
+  <img src="https://i.ibb.co/xH1nt6n/Screenshot-577.png" alt="Dating Juice" style="width:100%">
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<!-- Affair Juice Product Card -->
+<div class="card" style="position: absolute; top: 1050px; left: 940px;">
+  <img src="https://i.ibb.co/5kTRh5p/Screenshot-579.png" alt="Affair Juice" style="width:100%">
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<!-- Health & Lifestyles Header -->
+<div class="health-lifestyles">
+  Health & Lifestyles
+</div>
+
+<!-- See All Articles Button -->
+<a href="articles.html" class="see-all-articles-button">See All Articles</a>
+
+<!-- Orange Fruit Animation -->
+<div class="orange-animation"></div>
+
+<!-- Tomato Fruit Animation -->
+<div class="tomato-animation"></div>
+
+<!-- What are the Health Benefits of Consuming Juices? Article Card -->
+<div class="article-card" style="left: 150px; top: 1900px;">
+  <img src="https://i.ibb.co/FB6L3GQ/Screenshot-582.png" alt="Screenshot-582" border="0">
+  <button class="see-morebutton" style="position: absolute; top: 580px; left: 150px;">See More</button>
+</div>
+
+<!-- “5 Surprising Health Benefits of Orange Juice!” Article card -->
+<div class="article-card" style="left: 712.8px; top: 1900px;">
+  <img src="https://i.ibb.co/bPTWM8p/Screenshot-583.png" alt="Screenshot-583" border="0">
+  <button class="see-morebutton" style="position: absolute; top: 580px; left: 150px;">See More</button>
+</div> 
+
+<!-- Footer content -->
+<div class="footer">
+  <!-- Contact Us information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: bold; color: #000000; position: absolute; left: 72.2px; top: 25px;">Contact Us</p>
+  
+  <!-- Instagram link and logo -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 100px; top: 50px;">
+    <a href="https://www.instagram.com/juice_kabita_/" target="_blank">
+      <img src="https://i.ibb.co/ZXR47d9/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-ma.png" alt="Instagram Logo" style="width: 45.1px; position: absolute; left: -40px; top: -3px;">
+    </a>
+    Instagram @juice_kabita_
+  </p>
+  
+  <!-- Copyright information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 528.4px; top: 50px;">&copy; 2024 Kabita Juice All rights reserved</p>
+</div>
+
+<script>
+// JavaScript code
+let slideIndex = 1; // Variable to keep track of the current slide index, initialized to the first slide
+showSlides(slideIndex);
+
+// Function to move to the next or previous slide
+function plusSlides(n) { 
+  showSlides(slideIndex += n); // Call the showSlides function with the updated slide index
+}
+
+// Function to move to a specific slide
+function currentSlide(n) {
+  showSlides(slideIndex = n); // Call the showSlides function with the specified slide index
+}
+
+// Function to display the slides
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides"); // Get all elements with class "mySlides"
+  const circles = document.getElementsByClassName("slideshow-circle"); // Get all elements with class "slideshow-circle"
+  
+  // Reset slide index if it exceeds the total number of slides
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  // Set slide index to the last slide if it becomes less than 1
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  // Remove the active class from all circles
+  for (i = 0; i < circles.length; i++) {
+    circles[i].className = circles[i].className.replace(" active", "");
+  }
+  // Display the current slide
+  slides[slideIndex - 1].style.display = "block";
+  // Add the active class to the corresponding circle
+  circles[slideIndex - 1].className += " active";
+}
+
+// Automatic slideshow
+let slideIndexAuto = 0; // Variable to keep track of the current slide index for automatic slideshow
+autoSlides();
+
+// Function for automatic slideshow
+function autoSlides() {
+  let i;
+  const slides = document.getElementsByClassName("mySlides"); // Get all elements with class "mySlides"
+  const circles = document.getElementsByClassName("slideshow-circle"); // Get all elements with class "slideshow-circle"
+  
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  // Remove the active class from all circles
+  for (i = 0; i < circles.length; i++) {
+    circles[i].className = circles[i].className.replace(" active", "");
+  }
+  // Increment slide index and reset if it exceeds the total number of slides
+  slideIndexAuto++;
+  if (slideIndexAuto > slides.length) {slideIndexAuto = 1}
+  // Display the current slide and add the active class to the corresponding circle
+  slides[slideIndexAuto - 1].style.display = "block";
+  circles[slideIndexAuto - 1].className += " active";
+  // Change slide every 3 seconds (3000 milliseconds)
+  setTimeout(autoSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html>

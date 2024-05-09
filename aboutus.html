@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Viewport meta tag ensures proper rendering and scaling on various devices -->
+
+<style>
+/* CSS Styles */
+/* Resets margin for the entire page */ 
+body {
+  margin:0; /* Resets margin */
+  background-color: #608D40; /* Background color of the website */
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Ensures overflow behaviour*/ 
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navigation bar at the top*/ 
+  top: 0; /* Positions the navbar at the top*/
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links */
+.navbar a {
+  float: left; /* Aligns links horizontally*/
+  display: block; /* Display links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers text within links */
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /* Removes underline */ 
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for logo */
+.logo {
+  position: fixed; /* Positions the logo */
+  top: 1px; /* Aligns the logo vertically */
+  left: 46.2px; /* Aligns the logo horizontally */
+}
+
+/* Styling for logo image */
+.logo img {
+  width: 141.5px; /* Width of the logo */
+}
+
+/* Styling for "About Us" link */
+.about-us {
+  position: fixed; /* Positions the "About Us" link */
+  top: 63.3px; /* Aligns the "About Us" link vertically */
+  left: 280.5px; /* Aligns the "About Us" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */ 
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "About Us" link */
+.about-us:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Articles" link */
+.articles {
+  position: fixed; /* Positions the "Articles" link */
+  top: 63.3px; /* Aligns the "Articles" link vertically */
+  left: 629.3px; /* Aligns the "Articles" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Articles" link */
+.articles:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Shop" link */
+.shop {
+  position: fixed; /* Positions the "Shop" link */
+  top: 63.3px; /* Aligns the "Shop" link vertically */
+  left: 956.2px; /* Aligns the "Shop" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Shop" link */
+.shop:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for cart icon */
+.cart {
+  position: fixed; /* Positions the icon */
+  top: 60px; /* Position of the cart icon */
+  left: 1200px; /* Aligns the icon horizontally */
+}
+
+/* Styling for cart icon image */
+.cart img {
+  width: 50.2px; /* Width of the cart icon */
+  height: 48.7px; /* Height of the cart icon */
+}
+
+/* Hover effect for cart icon */
+.cart img:hover {
+  filter: invert(100%); /* Invert colors of the cart icon on hover */
+}
+
+/* Main content area */
+.main {
+  padding: 16px; /* Padding around the content */
+  margin-top: 230px; /* Adjusted margin top to accommodate the fixed navbar */
+  height: 3000px; /* Used in this example to enable scrolling */
+}
+
+/* Styling for fixed top navigation bar */
+.fixed-navbar {
+  overflow: hidden; /* Ensures overflow behaviour */  
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top */ 
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links in the fixed navbar */
+.fixed-navbar a {
+  float: left; /* Aligns links horizontally */
+  display: block; /* Displays links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers the text within links */ 
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /*Removes underline */
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links in the fixed navbar */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* About Us Header Styles */
+.about-us-header {
+  position: absolute;
+  left: 640px;
+  top: 197.5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  animation: fade-in 3s;
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hover Effect for Navigation Links */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+
+/* Welcoming Header Styles */
+.welcoming-header {
+  position: absolute;
+  left: 350px;
+  top: 250px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  animation: fade-in 5s;
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styling for Kabita Juice Introduction */
+.kabita-introduction {
+  position: absolute;
+  left: 250px; /* Adjusted horizontal alignment */
+  top: 300px; /* Adjusted vertical alignment */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #ffffff; /* Font color */
+  animation: fade-in 9s; /* Font animation */
+  text-align: center; /* Center alignment */
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styling for Why Kabita Juice? Header */
+.why-kabita-header {
+  position: absolute;
+  left: 580px;
+  top: 700px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Styling for Rectangle Section */
+.rectangle-section {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width: 100%;
+  height: 425px;
+  background-color: #80C251;
+  z-index: -1; /* Ensures the section is behind other content */
+}
+
+/* Styling for Our Mission Header */
+.mission-header {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  position: absolute;
+  top: 1050px;
+  left: 615px;
+}
+
+ /* Styling for the footer */
+.footer {
+  position: absolute; /* Positions the footer */
+  top: 1300px; /* Y alignment */
+  width: 100%; /* Width of the footer */
+  height: 117.2px; /* Height of the footer */
+  background-color: #ffffff; /* Background color of the footer */
+  bottom: 0; /* Aligns the footer to the bottom of the page */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+</style>
+</head>
+<body>
+
+<!-- Fixed top navigation bar -->
+<div class="fixed-navbar">
+  <!-- Logo -->
+  <a href="homepage.html" class="logo">
+    <img src="https://i.ibb.co/z4ftFft/6bca1378-c9a6-49ba-8af4-0d8a56d46be2-removebg-preview.png" alt="Logo">
+  </a>
+  <!-- Navigation Links -->
+  <a href="aboutus.html" class="about-us">About Us</a>
+  <a href="articles.html" class="articles">Articles</a>
+  <a href="shop.html" class="shop">Shop</a>
+  <!-- Cart Icon -->
+  <a href="#cart" class="cart">
+    <img src="https://i.ibb.co/dMYWX0K/Screenshot-627-removebg-preview.png" alt="Cart">
+  </a>
+</div>
+
+<!-- About Us Header -->
+<div class="about-us-header">
+About Us
+</div>
+
+<!-- Welcoming Header -->
+<div class="welcoming-header">
+Welcome to Kabita Juice - where every sip is a journey to vitality and wellness!
+</div>
+
+<!-- Kabita Juice Introduction -->
+<div class="kabita-introduction">
+   At Kabita Juice, we believe in the power of nature to nourish and rejuvenate the body, mind, and soul. Our <br> commitment to quality, freshness, and taste ensures that each bottle of Kabita Juice is bursting with the <br> goodness of handpicked fruits and vegetables, carefully blended to perfection. 
+</div>
+
+<!-- Image -->
+<img src="https://i.ibb.co/CvJD740/Screenshot-585.png" alt="Screenshot-585" style="width: 1403px; height: 250px; position: absolute; top: 400px; left: 0;">
+
+<!-- Why Kabita Juice? Header -->
+<div class="why-kabita-header">
+  Why Kabita Juice?
+</div>
+
+<!-- Why Kabita Juice? Information -->
+<div class="kabita-info">
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; top: 750px; left: 41.4px;">
+    At Kabita Juice, we stand apart because of our unwavering commitment to quality and wellness. Our juices are a testament to Pure Goodness, made from 100% natural ingredients without any added sugars, preservatives, or artificial flavors. We believe in keeping it real, just as nature intended. Packed with essential vitamins, minerals, and antioxidants, Kabita Juice offers a daily dose of nutrition in a convenient bottle, whether you're aiming to boost your immune system or simply stay hydrated. Our extensive range of flavors, from refreshing classics like orange and apple to exotic blends like kale and pineapple, ensures there's something to tantalize every palate. But it's not just about taste; each juice is carefully crafted to offer specific health benefits, supporting detoxification, energy, digestion, and overall wellness. We take pride in our Sustainable Practices, sourcing ingredients locally and using recyclable packaging to minimize our environmental impact. Above all, Customer Satisfaction is our top priority. We're here to provide the highest quality products and exceptional service, whether you have questions, feedback, or simply want to share your love for Kabita Juice. Join us in experiencing the goodness of nature in every sip and raise a toast to health and happiness with Kabita Juice!
+  </p>
+</div>
+
+<!-- Rectangle Section -->
+<div class="rectangle-section"></div>
+
+<!-- Kabita Juice Mission Information -->
+<div class="mission-info">
+  <p>
+    At Kabita Juice, our mission is to inspire and empower people to live healthier, happier lives by providing them with delicious, nutritious, and sustainably sourced juices. We are committed to using only the freshest, highest quality ingredients, free from additives and artificial flavors, to create beverages that nourish the body and delight the taste buds. Through our dedication to sustainability and eco-conscious practices, we aim to contribute positively to both the health of our customers and the health of our planet. With every bottle of Kabita Juice, we strive to promote wellness, vitality, and a deeper connection to the natural world. Join us on our journey to make healthy living accessible and enjoyable for all.
+  </p>
+</div>
+
+<!-- Our Mission Information -->
+<div class="our-mission">
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; top: 1100px; left: 41.4px;">
+    At Kabita Juice, our mission is to inspire and empower people to live healthier, happier lives by providing them with delicious, nutritious, and sustainably sourced juices. We are committed to using only the freshest, highest quality ingredients, free from additives and artificial flavors, to create beverages that nourish the body and delight the taste buds. Through our dedication to sustainability and eco-conscious practices, we aim to contribute positively to both the health of our customers and the health of our planet. With every bottle of Kabita Juice, we strive to promote wellness, vitality, and a deeper connection to the natural world. Join us on our journey to make healthy living accessible and enjoyable for all.
+  </p>
+</div>
+
+<!-- Our Mission Header -->
+<div class="mission-header">
+  Our Mission
+</div>
+
+<!-- Footer content -->
+<div class="footer">
+  <!-- Contact Us information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: bold; color: #000000; position: absolute; left: 72.2px; top: 25px;">Contact Us</p>
+  
+  <!-- Instagram link and logo -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 100px; top: 50px;">
+    <a href="https://www.instagram.com/juice_kabita_/" target="_blank">
+      <img src="https://i.ibb.co/ZXR47d9/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-ma.png" alt="Instagram Logo" style="width: 45.1px; position: absolute; left: -40px; top: -3px;">
+    </a>
+    Instagram @juice_kabita_
+  </p>
+  
+  <!-- Copyright information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 528.4px; top: 50px;">&copy; 2024 Kabita Juice All rights reserved</p>
+</div>
+
+</body>
+</html>
