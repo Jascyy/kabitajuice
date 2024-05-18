@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Viewport meta tag ensures proper rendering and scaling on various devices -->
+
+<style>
+/* CSS Styles */
+/* Resets margin for the entire page */ 
+body {
+  margin:0; /* Resets margin */
+  background-color: #608D40; /* Background color of the website */
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Ensures overflow behaviour*/ 
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navigation bar at the top*/ 
+  top: 0; /* Positions the navbar at the top*/
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links */
+.navbar a {
+  float: left; /* Aligns links horizontally*/
+  display: block; /* Display links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers text within links */
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /* Removes underline */ 
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for logo */
+.logo {
+  position: fixed; /* Positions the logo */
+  top: 1px; /* Aligns the logo vertically */
+  left: 46.2px; /* Aligns the logo horizontally */
+}
+
+/* Styling for logo image */
+.logo img {
+  width: 141.5px; /* Width of the logo */
+}
+
+/* Styling for "About Us" link */
+.about-us {
+  position: fixed; /* Positions the "About Us" link */
+  top: 63.3px; /* Aligns the "About Us" link vertically */
+  left: 280.5px; /* Aligns the "About Us" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */ 
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "About Us" link */
+.about-us:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Articles" link */
+.articles {
+  position: fixed; /* Positions the "Articles" link */
+  top: 63.3px; /* Aligns the "Articles" link vertically */
+  left: 629.3px; /* Aligns the "Articles" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Articles" link */
+.articles:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Shop" link */
+.shop {
+  position: fixed; /* Positions the "Shop" link */
+  top: 63.3px; /* Aligns the "Shop" link vertically */
+  left: 956.2px; /* Aligns the "Shop" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Shop" link */
+.shop:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for cart icon */
+.cart {
+  position: fixed; /* Positions the icon */
+  top: 60px; /* Position of the cart icon */
+  left: 1200px; /* Aligns the icon horizontally */
+}
+
+/* Styling for cart icon image */
+.cart img {
+  width: 50.2px; /* Width of the cart icon */
+  height: 48.7px; /* Height of the cart icon */
+}
+
+/* Hover effect for cart icon */
+.cart img:hover {
+  filter: invert(100%); /* Invert colors of the cart icon on hover */
+}
+
+/* Main content area */
+.main {
+  padding: 16px; /* Padding around the content */
+  margin-top: 230px; /* Adjusted margin top to accommodate the fixed navbar */
+  height: 3000px; /* Used in this example to enable scrolling */
+}
+
+/* Styling for fixed top navigation bar */
+.fixed-navbar {
+  overflow: hidden; /* Ensures overflow behaviour */  
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top */ 
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links in the fixed navbar */
+.fixed-navbar a {
+  float: left; /* Aligns links horizontally */
+  display: block; /* Displays links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers the text within links */ 
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /*Removes underline */
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links in the fixed navbar */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Hover Effect for Navigation Links */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Welcome to Kabita Juice Shop */
+ .header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 510px;
+    top: 192.3px;
+    }
+    
+ /* Product Card Styles */
+ .card {
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a shadow effect to the card */
+ 	max-width: 402.8px; /* Width of the product card */
+  	height: 596.4px; /* Height of the product card */
+ 	margin: auto; /* Centers the card horizontally */
+  	text-align: center; /* Centers the content inside the card */
+  	position: absolute; /* Positions the card */
+  	top: 1128.2px; /* Y alignment of the card */
+}
+
+ .card button {
+  	border: none; /* Removes button border */
+  	outline: 0; /* Removes button outline */
+  	padding: 12px; /* Padding inside the button */
+  	color: white; /* Text color of the button */
+  	background-color: #000000; /* Button background color */
+  	text-align: center; /* Centers the text within the button */
+  	cursor: pointer; /* Cursor style */
+  	width: 277.4px; /* Button width */
+ 	height: 42.5px; /* Button height */
+  	font-size: 12px; /* Button text size */
+  	position: absolute; /* Position the button absolutely */
+  	top: 90%; /* Adjust the top position as needed, e.g., 90% */
+  	left: 50%; /* Center the button horizontally */
+  	transform: translateX(-50%); /* Center the button horizontally */
+}
+
+ .card button:hover {
+  	opacity: 0.7; /* Opacity change on button hover */
+}
+
+/* All Products */
+.header1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 44.1px;
+  top: 850px;
+}
+
+/* Kabita Single Juices */
+.header2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 560px;
+  top: 950px;
+}
+
+/* Kabita Dating Juices */
+.header3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 560px;
+  top: 3000px;
+}
+
+/* Kabita Affair Juices */
+.header4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 560px;
+  top: 3750px;
+}
+
+ /* Styling for the footer */
+.footer {
+  		position: absolute; /* Positions the footer */
+ 		top: 4500px; /* Y alignment */
+  		width: 100%; /* Width of the footer */
+  		height: 117.2px; /* Height of the footer */
+ 		background-color: #ffffff; /* Background color of the footer */
+  		bottom: 0; /* Aligns the footer to the bottom of the page */
+		}
+
+.footer p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+</style>
+</head>
+<body>
+
+<!-- Fixed top navigation bar -->
+<div class="fixed-navbar">
+  <!-- Logo -->
+  <a href="./index" class="logo">
+    <img src="https://i.ibb.co/z4ftFft/6bca1378-c9a6-49ba-8af4-0d8a56d46be2-removebg-preview.png" alt="Logo">
+  </a>
+  <!-- Navigation Links -->
+  <a href="./aboutus" class="about-us">About Us</a>
+  <a href="./articles" class="articles">Articles</a>
+  <a href="./shop" class="shop">Shop</a>
+  <!-- Cart Icon -->
+  <a href="./cart" class="cart">
+    <img src="https://i.ibb.co/dMYWX0K/Screenshot-627-removebg-preview.png" alt="Cart">
+  </a>
+</div>
+
+<!-- Welcome to Kabita Juice Shop -->
+<div class="header">Welcome to Kabita Juice Shop</div>
+
+<!-- Image Border --> 
+<img src="https://i.ibb.co/zGBr60r/Screenshot-596.png" alt="Screenshot-596" style="width: 1350px; height: 515.9px; margin-left: 31.2px; margin-top: 294.6px;" border="0">
+
+<!-- All Products Heading -->
+<div class="header1"> All Products (15) </div>
+
+<!-- Kabita Single Juices Heading -->
+<div class="header2"> Kabita Single Juices </div>
+
+<!-- Single Juice Product Card Orange -->
+<div class="card" style="position: absolute; top: 1050px; left: 60px;">
+  <img src="https://i.ibb.co/6wyfHyh/Screenshot-576.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Orange Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Tomato -->
+<div class="card" style="position: absolute; top: 1050px; left: 500px;">
+  <img src="https://i.ibb.co/QJjhWKt/Screenshot-597.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Tomato Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Carrot -->
+<div class="card" style="position: absolute; top: 1050px; left: 940px;">
+  <img src="https://i.ibb.co/WGg79Dq/Screenshot-598.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Carrot Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Strawberry -->
+<div class="card" style="position: absolute; top: 1700px; left: 60px;">
+  <img src="https://i.ibb.co/Cmd9TzP/Screenshot-599.png" alt="Single Juice" style ="width:100%">
+  <button onclick="addToCart('Strawberry Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Mango -->
+<div class="card" style="position: absolute; top: 1700px; left: 500px;">
+  <img src="https://i.ibb.co/VDSsMQJ/Screenshot-600.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Mango Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Avocado -->
+<div class="card" style="position: absolute; top: 1700px; left: 940px;">
+  <img src="https://i.ibb.co/RNvzgKT/Screenshot-601.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Avocado Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Lemon -->
+<div class="card" style="position: absolute; top: 2350px; left: 60px;">
+  <img src="https://i.ibb.co/BgfSZK2/Screenshot-602.png" alt="Single Juice" style ="width:100%">
+  <button onclick="addToCart('Lemon Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Kiwi -->
+<div class="card" style="position: absolute; top: 2350px; left: 500px;">
+  <img src="https://i.ibb.co/C2Hc2Yf/Screenshot-603.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Kiwi Juice')">Add to Cart</button>
+</div>
+
+<!-- Single Juice Product Card Sunkist -->
+<div class="card" style="position: absolute; top: 2350px; left: 940px;">
+  <img src="https://i.ibb.co/6tpxfR1/Screenshot-604.png" alt="Single Juice" style="width:100%">
+  <button onclick="addToCart('Sunkist Juice')">Add to Cart</button>
+</div>
+
+<!-- Kabita Dating Juices Heading -->
+<div class="header3"> Kabita Dating Juices </div>
+
+<!-- Dating Juice Product Card Tomato + Orange -->
+<div class="card" style="position: absolute; top: 3100px; left: 60px;">
+  <img src="https://i.ibb.co/Th6v8BF/Screenshot-782.png" alt="Dating Juice" style ="width:100%">
+  <button onclick="addToCart('Tomato + Orange Juice')">Add to Cart</button>
+</div>
+
+<!-- Dating Juice Product Card Strawberry + Banana -->
+<div class="card" style="position: absolute; top: 3100px; left: 500px;">
+  <img src="https://i.ibb.co/GsxQxbW/Screenshot-783.png" alt="Dating Juice" style="width:100%">
+  <button onclick="addToCart('Strawberry + Banana Juice')">Add to Cart</button>
+</div>
+
+<!-- Dating Juice Product Card Soursop + Mango -->
+<div class="card" style="position: absolute; top: 3100px; left: 940px;">
+  <img src="https://i.ibb.co/P4C687v/Screenshot-607.png" alt="Dating Juice" style="width:100%">
+  <button onclick="addToCart('Soursop + Mango Juice')">Add to Cart</button>
+</div>
+
+<!-- Kabita Affair Juices Heading -->
+<div class="header4"> Kabita Affair Juices </div>
+
+<!-- Affair Juice Product Card Banana + Strawberry + Apple -->
+<div class="card" style="position: absolute; top: 3850px; left: 60px;">
+  <img src="https://i.ibb.co/Wf79sTh/Screenshot-608.png" alt="Affair Juice" style="width:100%">
+  <button onclick="addToCart('Banana + Strawberry + Apple Juice')">Add to Cart</button>
+</div>
+
+<!-- Affair Juice Product Card Apple + Orange + Strawberry -->
+<div class="card" style="position: absolute; top: 3850px; left: 500px;">
+  <img src="https://i.ibb.co/42vP4Wm/Screenshot-609.png" alt="Affair Juice" style="width:100%">
+  <button onclick="addToCart('Apple + Orange + Strawberry Juice')">Add to Cart</button>
+</div>
+
+<!-- Affair Juice Product Card Tomato + Carrot + Apple -->
+<div class="card" style="position: absolute; top: 3850px; left: 940px;">
+  <img src="https://i.ibb.co/HNvrGqG/Screenshot-612.png" alt="Affair Juice" style="width:100%">
+  <button onclick="addToCart('Tomato + Carrot + Apple Juice')">Add to Cart</button>
+</div>
+
+<!-- Footer content -->
+<div class="footer">
+  <!-- Contact Us information -->
+  <a href="./contactus" style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: bold; color: #000000; position: absolute; left: 72.2px; top: 25px;">Contact Us</p>
+  
+  <!-- Instagram link and logo -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 100px; top: 50px;">
+    <a href="https://www.instagram.com/juice_kabita_/" target="_blank">
+      <img src="https://i.ibb.co/ZXR47d9/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-ma.png" alt="Instagram Logo" style="width: 45.1px; position: absolute; left: -40px; top: -3px;">
+    </a>
+    Instagram @juice_kabita_
+  </p>
+  
+  <!-- Copyright information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 528.4px; top: 50px;">&copy; 2024 Kabita Juice All rights reserved</p>
+</div>
+
+<script>
+function addToCart(productName) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(productName);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(productName + ' has been added to your cart!');
+}
+</script>
+
+</body>
+</html>

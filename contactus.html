@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Viewport meta tag ensures proper rendering and scaling on various devices -->
+
+<style>
+/* CSS Styles */
+/* Resets margin for the entire page */ 
+body {
+  margin:0; /* Resets margin */
+  background-color: #608D40; /* Background color of the website */
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Ensures overflow behaviour*/ 
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navigation bar at the top*/ 
+  top: 0; /* Positions the navbar at the top*/
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links */
+.navbar a {
+  float: left; /* Aligns links horizontally*/
+  display: block; /* Display links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers text within links */
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /* Removes underline */ 
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for logo */
+.logo {
+  position: fixed; /* Positions the logo */
+  top: 1px; /* Aligns the logo vertically */
+  left: 46.2px; /* Aligns the logo horizontally */
+}
+
+/* Styling for logo image */
+.logo img {
+  width: 141.5px; /* Width of the logo */
+}
+
+/* Styling for "About Us" link */
+.about-us {
+  position: fixed; /* Positions the "About Us" link */
+  top: 63.3px; /* Aligns the "About Us" link vertically */
+  left: 280.5px; /* Aligns the "About Us" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */ 
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "About Us" link */
+.about-us:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Articles" link */
+.articles {
+  position: fixed; /* Positions the "Articles" link */
+  top: 63.3px; /* Aligns the "Articles" link vertically */
+  left: 629.3px; /* Aligns the "Articles" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Articles" link */
+.articles:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Shop" link */
+.shop {
+  position: fixed; /* Positions the "Shop" link */
+  top: 63.3px; /* Aligns the "Shop" link vertically */
+  left: 956.2px; /* Aligns the "Shop" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Shop" link */
+.shop:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for cart icon */
+.cart {
+  position: fixed; /* Positions the icon */
+  top: 60px; /* Position of the cart icon */
+  left: 1200px; /* Aligns the icon horizontally */
+}
+
+/* Styling for cart icon image */
+.cart img {
+  width: 50.2px; /* Width of the cart icon */
+  height: 48.7px; /* Height of the cart icon */
+}
+
+/* Hover effect for cart icon */
+.cart img:hover {
+  filter: invert(100%); /* Invert colors of the cart icon on hover */
+}
+
+/* Main content area */
+.main {
+  padding: 16px; /* Padding around the content */
+  margin-top: 230px; /* Adjusted margin top to accommodate the fixed navbar */
+  height: 3000px; /* Used in this example to enable scrolling */
+}
+
+/* Styling for fixed top navigation bar */
+.fixed-navbar {
+  overflow: hidden; /* Ensures overflow behaviour */  
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top */ 
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links in the fixed navbar */
+.fixed-navbar a {
+  float: left; /* Aligns links horizontally */
+  display: block; /* Displays links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers the text within links */ 
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /*Removes underline */
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links in the fixed navbar */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* About Us Header Styles */
+.about-us-header {
+  position: absolute;
+  left: 640px;
+  top: 197.5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  animation: fade-in 3s;
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Our Contact Information Header Styles */
+.contact-info-header {
+  position: absolute;
+  left: 674.6px;
+  top: 253.7px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Kabita Juice Text Styles */
+.kabita-juice {
+  position: absolute;
+  left: 674.6px;
+  top: 324.7px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Address Header Styles */
+.address-header {
+  position: absolute;
+  left: 674.6px;
+  top: 385.4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Address Text Styles */
+.address-text {
+  position: absolute;
+  left: 674.6px;
+  top: 415.4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* Working-Hours Header Styles */
+.workinghours-header {
+  position: absolute;
+  left: 674.6px;  
+  top: 557.7px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Workinghours Text Styles */
+.workinghours-text {
+  position: absolute;
+  left: 674.6px;
+  top: 590px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* Instagram Header Styles */
+.instagram-header {
+  position: absolute;
+  left: 674.6px;  
+  top: 656px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Instagram Text Styles */
+.instagram-text {
+  position: absolute;
+  left: 674.6px;
+  top: 690px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* Box Styles */
+.box {
+  position: absolute;
+  width: 1239.8px;
+  height: 653.2px;
+  background-color: #BDD6B2;
+  left: 54.7px;
+  top: 900px;
+}
+
+/* Get in Touch with Us! Header Styles */
+.touch-header {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  font-weight: bold; /* Bold font */
+  color: #ffffff; /* Font color */
+  left: 550px; /* X Position */
+  top: 930px; /* Y Position */
+}
+
+/* Your Name Text Styles */
+.name-text {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  left: 286px; /* X Position */
+  top: 1000px; /* Y Position */
+}
+
+/* Gmail Address Text Styles */
+.gmail-text {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  left: 740px; /* X Position */
+  top: 1000px; /* Y Position */
+}
+
+/* Phone Number Text Styles */
+.phone-text {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  left: 740px; /* X Position */
+  top: 1050px; /* Y Position */
+}
+
+/* Subject Text Styles */
+.subject-text {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  left: 286px; /* X Position */
+  top: 1050px; /* Y Position */
+}
+
+/* Message Text Box Styles */
+.message-box {
+  position: absolute;
+  width: 827.3px;
+  height: 300px; /* Increase the height */
+  left: 270.6px; /* X Position */
+  top: 1100px; /* Y Position */
+}
+
+/* Message Text Styles */
+.message-text {
+  position: absolute;
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 20px; /* Font size */
+  color: #000000; /* Font color */
+  width: 710px; /* Adjust width to fit the box */
+  height: 280px; /* Adjust height to fit the box */
+  left: 286px; /* X Position */
+  top: 1110px; /* Increase Y Position */
+}
+
+/* Send Message Button Styles */
+.send-button {
+  position: absolute;
+  width: 393px; /* Button Width */
+  height: 60.5px; /* Button Height */
+  background-color: #c8ffb0; /* Button Colour */
+  font-family: 'Raleway', sans-serif; /* Font Style */
+  font-size: 20px; /* Font Size */
+  color: #000000; /* Font Colour */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor style */
+  left: 467.1px; /* X Position */
+  top: 1440px; /* Y Position */
+}
+
+/* Hover effect for Send Message Button */
+.send-button:hover {
+  background-color: #a5ff86; /* Change background color on hover */
+}
+
+/* Styling for the footer */
+.footer {
+  position: absolute; /* Positions the footer */
+  top: 1600px; /* Y alignment */
+  width: 100%; /* Width of the footer */
+  height: 117.2px; /* Height of the footer */
+  background-color: #ffffff; /* Background color of the footer */
+  bottom: 0; /* Aligns the footer to the bottom of the page */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+</style>
+</head>
+<body>
+
+<!-- Fixed top navigation bar -->
+<div class="fixed-navbar">
+  <!-- Logo -->
+  <a href="./index" class="logo">
+    <img src="https://i.ibb.co/z4ftFft/6bca1378-c9a6-49ba-8af4-0d8a56d46be2-removebg-preview.png" alt="Logo">
+  </a>
+  <!-- Navigation Links -->
+  <a href="./aboutus" class="about-us">About Us</a>
+  <a href="./articles" class="articles">Articles</a>
+  <a href="./shop" class="shop">Shop</a>
+  <!-- Cart Icon -->
+  <a href="./cart" class="cart">
+    <img src="https://i.ibb.co/dMYWX0K/Screenshot-627-removebg-preview.png" alt="Cart">
+  </a>
+</div>
+
+<div class="container">
+  <div style="width: 514.8px; height: 769.4px; position: absolute; top: 201px; left: 54.7px;">
+    <img src="https://i.ibb.co/KVM29V7/Screenshot-626.png" alt="Screenshot-626" style="width: 514.8px; height: 650px;">
+  </div>
+
+  <!-- Box -->
+  <div class="box"></div>
+  <div style="width: 682.2px; height: 650px; position: absolute; background-color: #BDD6B2; top: 201px; left: 612.3px;"></div>
+
+  <!-- Our Contact Information Header -->
+  <div class="contact-info-header">Our Contact Information</div>
+
+  <!-- Kabita Juice Text -->
+  <div class="kabita-juice">Kabita Juice Text</div>
+
+  <!-- Address Header -->
+  <div class="address-header">Address:</div>
+
+  <!-- Address Text -->
+  <div class="address-text">
+    Ruko Kemang Pratama
+    <br>Jl. Kemang Pratama Raya Blok AL, <br> Rawalumbu, Bekasi, West Java, Indonesia
+  </div>
+
+  <!-- Workinghours Header -->
+  <div class="workinghours-header">Working Hours:</div>
+
+  <!-- Workinghours Text -->
+  <div class="workinghours-text">
+   09:00 - 20:00
+  </div>
+  
+   <!-- Instagram Header -->
+  <div class="instagram-header">Instagram:</div>
+  
+   <!-- Instagram Text -->
+  <div class="instagram-text">
+    @juice_kabita_
+  </div>
+  
+  <!-- Get in Touch with Us! Header -->
+  <div class="touch-header">Get in Touch with Us!</div>
+
+  <!-- Your Name Text -->
+  <input type="text" class="name-text" placeholder="Your Name">
+
+  <!-- Gmail Address Text -->
+  <input type="text" class="gmail-text" placeholder="Gmail Address">
+
+  <!-- Phone Number Text -->
+  <input type="text" class="phone-text" placeholder="Phone Number">
+
+  <!-- Subject Text -->
+  <input type="text" class="subject-text" placeholder="Subject">
+  
+  <!-- Message Text Box -->
+  <div class="message-box"></div>
+
+  <!-- Message Text -->
+  <textarea class="message-text" placeholder="Message"></textarea>
+</div>
+
+  <!-- Send Message Button -->
+  <button class="send-button">Send Message</button>
+  
+ <!-- JavaScript code to send the message to the website owner's Gmail -->
+<script>
+document.querySelector('.send-button').addEventListener('click', function() {
+  // Get the values from the input fields
+  var name = document.querySelector('.name-text').value;
+  var gmail = document.querySelector('.gmail-text').value;
+  var phone = document.querySelector('.phone-text').value;
+  var subject = document.querySelector('.subject-text').value;
+  var message = document.querySelector('.message-text').value;
+
+  // Construct the message body
+  var body = "Name: " + name + "\n";
+  body += "Gmail: " + gmail + "\n";
+  body += "Phone Number: " + phone + "\n";
+  body += "Subject: " + subject + "\n";
+  body += "Message: " + message;
+
+  // Construct the email link for Gmail
+  var mailtoLink = "mailto:" + encodeURIComponent("jascy.natalia@svpsmart.sch.id") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  // Open the email client with pre-filled information
+  window.location.href = mailtoLink;
+});
+</script>
+
+<!-- Footer content -->
+<div class="footer">
+  <!-- Contact Us information -->
+  <a href="./contactus" style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: bold; color: #000000; position: absolute; left: 72.2px; top: 25px; text-decoration: none;">Contact Us</a>
+  
+  <!-- Instagram link and logo -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 100px; top: 50px;">
+    <a href="https://www.instagram.com/juice_kabita_/" target="_blank">
+      <img src="https://i.ibb.co/ZXR47d9/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-ma.png" alt="Instagram Logo" style="width: 45.1px; position: absolute; left: -40px; top: -3px;">
+    </a>
+    Instagram @juice_kabita_
+  </p>
+  
+  <!-- Copyright information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 528.4px; top: 50px;">&copy; 2024 Kabita Juice All rights reserved</p>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Viewport meta tag ensures proper rendering and scaling on various devices -->
+
+<style>
+/* CSS Styles */
+/* Resets margin for the entire page */ 
+body {
+  margin:0; /* Resets margin */
+  background-color: #608D40; /* Background color of the website */
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Ensures overflow behaviour*/ 
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navigation bar at the top*/ 
+  top: 0; /* Positions the navbar at the top*/
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links */
+.navbar a {
+  float: left; /* Aligns links horizontally*/
+  display: block; /* Display links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers text within links */
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /* Removes underline */ 
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for logo */
+.logo {
+  position: fixed; /* Positions the logo */
+  top: 1px; /* Aligns the logo vertically */
+  left: 46.2px; /* Aligns the logo horizontally */
+}
+
+/* Styling for logo image */
+.logo img {
+  width: 141.5px; /* Width of the logo */
+}
+
+/* Styling for "About Us" link */
+.about-us {
+  position: fixed; /* Positions the "About Us" link */
+  top: 63.3px; /* Aligns the "About Us" link vertically */
+  left: 280.5px; /* Aligns the "About Us" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */ 
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "About Us" link */
+.about-us:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Articles" link */
+.articles {
+  position: fixed; /* Positions the "Articles" link */
+  top: 63.3px; /* Aligns the "Articles" link vertically */
+  left: 629.3px; /* Aligns the "Articles" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Articles" link */
+.articles:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for "Shop" link */
+.shop {
+  position: fixed; /* Positions the "Shop" link */
+  top: 63.3px; /* Aligns the "Shop" link vertically */
+  left: 956.2px; /* Aligns the "Shop" link horizontally */
+  font-family: 'Raleway', sans-serif; /* Font style */
+  font-size: 30px; /* Font size */
+  color: #ffffff; /* Font color*/
+}
+
+/* Hover effect for "Shop" link */
+.shop:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Styling for cart icon */
+.cart {
+  position: fixed; /* Positions the icon */
+  top: 60px; /* Position of the cart icon */
+  left: 1200px; /* Aligns the icon horizontally */
+}
+
+/* Styling for cart icon image */
+.cart img {
+  width: 50.2px; /* Width of the cart icon */
+  height: 48.7px; /* Height of the cart icon */
+}
+
+/* Hover effect for cart icon */
+.cart img:hover {
+  filter: invert(100%); /* Invert colors of the cart icon on hover */
+}
+
+/* Main content area */
+.main {
+  padding: 16px; /* Padding around the content */
+  margin-top: 230px; /* Adjusted margin top to accommodate the fixed navbar */
+  height: 3000px; /* Used in this example to enable scrolling */
+}
+
+/* Styling for fixed top navigation bar */
+.fixed-navbar {
+  overflow: hidden; /* Ensures overflow behaviour */  
+  background-color:#2E4D18; /* Background color of the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top */ 
+  width: 100%; /* Width of the navbar */
+  height: 163.9px; /* Height of the navbar */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+}
+
+/* Styling for navigation links in the fixed navbar */
+.fixed-navbar a {
+  float: left; /* Aligns links horizontally */
+  display: block; /* Displays links as block elements */
+  color: #ffffff; /* Text color of the navbar links */
+  text-align: center; /* Centers the text within links */ 
+  padding: 14px 16px; /* Padding for each navbar link */
+  text-decoration: none; /*Removes underline */
+  font-size: 30px; /* Font size of the navbar links */
+}
+
+/* Hover effect for navigation links in the fixed navbar */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Hover Effect for Navigation Links */
+.fixed-navbar a:hover {
+  background: #ffffff; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+ .header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 570px;
+    top: 192.3px;
+    }
+    
+ .button-container {
+        position: absolute;
+        top: 525px;
+        left: 570px;
+        z-index: 500; /* Ensure the button stays on top */
+    }
+        
+ .button {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 25px; /* Rounded corners */
+        font-family: 'Raleway', sans-serif; /* Font style */
+        background-color: #c8ffb0;
+        color: #000000;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 10px;
+        }
+        
+ .image-container {
+        position: absolute;
+        top: 50px;
+        left: 123px;
+        width: 1200px;
+        height: 750px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+    }  
+    
+     /* Styling for the footer */
+.footer {
+  		position: absolute; /* Positions the footer */
+ 		top: 2700px; /* Y alignment */
+  		width: 100%; /* Width of the footer */
+  		height: 117.2px; /* Height of the footer */
+ 		background-color: #ffffff; /* Background color of the footer */
+  		bottom: 0; /* Aligns the footer to the bottom of the page */
+		}
+
+.footer p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+</style>
+</head>
+<body>
+
+<!-- Fixed top navigation bar -->
+<div class="fixed-navbar">
+  <!-- Logo -->
+  <a href="./index" class="logo">
+    <img src="https://i.ibb.co/z4ftFft/6bca1378-c9a6-49ba-8af4-0d8a56d46be2-removebg-preview.png" alt="Logo">
+  </a>
+  <!-- Navigation Links -->
+  <a href="./aboutus" class="about-us">About Us</a>
+  <a href="./articles" class="articles">Articles</a>
+  <a href="./shop" class="shop">Shop</a>
+  <!-- Cart Icon -->
+  <a href="./cart" class="cart">
+    <img src="https://i.ibb.co/dMYWX0K/Screenshot-627-removebg-preview.png" alt="Cart">
+  </a>
+</div>
+
+<div class="header">Health & Lifestyles</div>
+
+<!-- What are the Health Benefits of Consuming Juices? -->
+<div class="image-container">
+    <img src="https://i.ibb.co/YhTVBHC/Screenshot-620.png" alt="Screenshot-620" border="0">
+</div>
+
+<div class="button-container">
+    <a target ="_blank" href="https://www.webmd.com/diet/juicing-health-benefits" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- 5 Surprising Health Benefits of Orange Juice! -->
+<div class="image-container" style="top: 450px; left: 123px;">
+  <img src="https://i.ibb.co/L1qKp3b/Screenshot-621.png" alt="Screenshot-621" border="0">
+</div>
+
+<div class="button-container" style="top: 925px; left: 586.3px;">
+    <a target ="_blank" href="https://www.healthline.com/nutrition/orange-juice-benefits" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- Benefits of Consuming Fruit Juices -->
+<div class="image-container" style="top: 850px; left: 123px;">
+ <img src="https://i.ibb.co/5x9SFBy/Screenshot-622.png" alt="Screenshot-622" border="0">
+</div>
+
+<div class="button-container" style="top: 1325px; left: 586.3px;">
+    <a target ="_blank" href="https://www.kent.co.in/blog/health-benefits-of-fruit-juice" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- What Happens When you Drink Juice Every Day? -->
+<div class="image-container" style="top: 1250px; left: 123px;">
+ <img src="https://i.ibb.co/kxTGMr1/Screenshot-623.png" alt="Screenshot-623" border="0">
+</div>
+
+<div class="button-container" style="top: 1720px; left: 586.3px;">
+    <a target ="_blank" href="https://www.eatingwell.com/article/8033216/is-juice-healthy/" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- 60 Days Juice Diet for Weight Loss -->
+<div class="image-container" style="top: 1650px; left: 123px;">
+  <img src="https://i.ibb.co/41fjx5N/Screenshot-624.png" alt="Screenshot-624" border="0">
+</div>
+
+<div class="button-container" style="top: 2115px; left: 586.3px;">
+    <a target ="_blank" href="https://www.stylecraze.com/articles/60-day-juice-diet-everything-you-need-to-know/" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- Improve Your Digestive Health - Juice Cleanse? -->
+<div class="image-container" style="top: 2050px; left: 123px;">
+  <img src="https://i.ibb.co/2YXkyhp/Screenshot-625.png" alt="Screenshot-625" border="0">
+</div>
+
+<div class="button-container" style="top: 2525px; left: 586.3px;">
+    <a target ="_blank" href="https://russellhavranekmd.com/digestive-health-juice-cleanse-benefits/" class="button" style="width: 230.4px; height: 30px;">See More</a>
+</div>
+
+<!-- Footer content -->
+<div class="footer">
+  <!-- Contact Us information -->
+  <a href="./contactus" style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: bold; color: #000000; position: absolute; left: 72.2px; top: 25px;">Contact Us</p>
+  
+  <!-- Instagram link and logo -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 100px; top: 50px;">
+    <a href="https://www.instagram.com/juice_kabita_/" target="_blank">
+      <img src="https://i.ibb.co/ZXR47d9/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-ma.png" alt="Instagram Logo" style="width: 45.1px; position: absolute; left: -40px; top: -3px;">
+    </a>
+    Instagram @juice_kabita_
+  </p>
+  
+  <!-- Copyright information -->
+  <p style="font-family: 'Raleway', sans-serif; font-size: 20px; color: #000000; position: absolute; left: 528.4px; top: 50px;">&copy; 2024 Kabita Juice All rights reserved</p>
+</div>
+
+</body>
+</html>
